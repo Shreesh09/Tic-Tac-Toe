@@ -26,12 +26,10 @@ public class J
 
 class Ttt
 {
-	int[][] a = new int[3][3];
+	int a[][];
 	public Ttt()
 	{
-		for(int i = 0; i < 3; i++)
-			for(int j = 0; j < 3; j++)
-				a[i][j] = 0;
+		a = new int[][]{new int [] {0, 0, 0}, new int [] {0, 0, 0}, new int [] {0, 0, 0}};
 	}	
 	
 	void print()
