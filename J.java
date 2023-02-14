@@ -20,7 +20,10 @@ public class J
 			System.out.println("\n");
 		}
 		obj.print();
-		System.out.println("\nPlayer " + p + "Won");
+		if(obj.check() == 1)
+			System.out.println("\nPlayer " + p + "Won");
+		else
+			System.out.println("\n\nDraw");
 	}
 }
 
@@ -70,7 +73,20 @@ class Ttt
 			else if(a[0][i] == a[1][i] && a[1][i] == a[2][i] && a[0][i] != 0)
 				return 1;
 		}
-		return 0;
+		
+		int c = 0;
+		for(int i = 0; i < 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+			{
+				if(a[i][j] == 0)
+					c = 1;
+			}
+		}
+		if(c == 1)
+			return 0;
+		else
+			return 2;
 	}
 	
 	void move(int x, int y, int p)
